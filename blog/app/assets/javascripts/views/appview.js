@@ -49,8 +49,10 @@ app.AppView = Backbone.View.extend({
 
   onClickPost: function(event) {
     console.log("Clicked on Post");
-    console.log(event);
-    app.router.navigate(route, true);
+    console.log($(event.currentTarget).data("cid"));
+    var route = ($(event.currentTarget).data("cid"));
+    app.router.navigate("#posts/" + route, true);
+
 
     // alert("Cliekced on pose")
   }
